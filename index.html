@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+        <!-- <div id="root">
+            <input type="text" id="input" v-model="message">
+
+            <p>the value of the input is: {{ message }}</p>
+        </div> -->
+
+    <div id="root">
+        Som en
+        <input type="text" id="input" name="roll" placeholder="roll" v-model="roll">
+        vill jag
+        <input type="text" name="aktivitet" placeholder="aktivitet" v-model="aktivitet">
+        i
+        <input type="text" name="sammanhang" placeholder="sammanhang" v-model="sammanhang">
+        för att
+        <input type="text" name="orsak" placeholder="orsak" v-model="orsak">
+        <button>done</button>
+        <p>Som en {{ roll }} vill jag {{ aktivitet }} i {{ sammanhang }} för att {{ orsak }}.</p>
+    </div>
+    <script src="vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
