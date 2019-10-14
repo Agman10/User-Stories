@@ -23,8 +23,9 @@
         <input type="text" name="sammanhang" placeholder="sammanhang" v-model="sammanhang">
         för att
         <input type="text" name="orsak" placeholder="orsak" v-model="orsak">
-        <button>done</button>
+        <button onclick="donebutton()">done</button>
         <p>Som en {{ roll }} vill jag {{ aktivitet }} i {{ sammanhang }} för att {{ orsak }}.</p>
+        <p id="text"></p>
     </div>
     <script src="vue.js"></script>
     <script src="main.js"></script>
