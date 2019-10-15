@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
@@ -16,16 +17,42 @@
 
     <div id="root">
         Som en
-        <input type="text" id="input" name="roll" placeholder="roll" v-model="roll">
+        <input type="text" id="input" name="role" placeholder="roll" v-model="newRole">
         vill jag
-        <input type="text" name="aktivitet" placeholder="aktivitet" v-model="aktivitet">
+        <input type="text" name="activity" placeholder="aktivitet" v-model="newActivity">
         i
-        <input type="text" name="sammanhang" placeholder="sammanhang" v-model="sammanhang">
+        <input type="text" name="context" placeholder="sammanhang" v-model="newContext">
         för att
-        <input type="text" name="orsak" placeholder="orsak" v-model="orsak">
-        <button onclick="donebutton()">done</button>
-        <p>Som en {{ roll }} vill jag {{ aktivitet }} i {{ sammanhang }} för att {{ orsak }}.</p>
+        <input type="text" name="reason" placeholder="orsak" v-model="newReason">
+        <button v-on:click="addStory">add story</button>
+        <p id="error"></p>
+        <h3 id="full"></h3>
+        <li v-for="fullStory in fullStories" v-text="fullStory"></li>
+        <p>Som en {{ newRole }} vill jag {{ newActivity }} i {{ newContext }} för att {{ newReason }}.</p>
+        
+            <h3 id="rol"></h3>
+            <li v-for="role in roles" v-text="role">{{ roles }}</li>
+            
+            <h3 id="akt"></h3>
+            <li v-for="activity in activities" v-text="activity">{{ activities }}</li>
+
+            <h3 id="con"></h3>
+            <li v-for="context in context" v-text="context">{{ context }}</li>
+
+            <h3 id="res"></h3>
+            <li v-for="reason in reasons" v-text="reason">{{ reasons }}</li>
+        
         <p id="text"></p>
+
+
+
+        <input id="input" type="text" v-model="newName">
+        <button v-on:click="addName">Add roll</button>
+        <ul>
+            <li v-for="name in names" v-text="name">{{ names }}</li>
+        </ul>
+        
+        
     </div>
     <script src="vue.js"></script>
     <script src="main.js"></script>
