@@ -17,28 +17,47 @@
 
     <div id="root">
         Som en
-        <input type="text" id="input" name="role" placeholder="roll" v-model="newRole">
+        <!-- role -->
+        <input type="text" name="role" placeholder="roll" list="roles" v-model="newRole">
+        <!-- adds new role to the list in input -->
+        <datalist id="roles" :value="newRole">
+            <option v-for="role in roles" :value="role" v-text="role">{{ roles }}</option>
+        </datalist>
         vill jag
-        <input type="text" name="activity" placeholder="aktivitet" v-model="newActivity">
+        <!-- activity -->
+        <input type="text" name="activity" placeholder="aktivitet" list="activities" v-model="newActivity">
+        <datalist id="activities" :value="newActivity">
+            <option v-for="activity in activities" :value="activity" v-text="activity">{{ activities }}</option>
+        </datalist>
         i
-        <input type="text" name="context" placeholder="sammanhang" v-model="newContext">
+        <!-- context -->
+        <input type="text" name="context" placeholder="sammanhang" list="contexts" v-model="newContext">
+        <datalist id="contexts" :value="newContext">
+            <option v-for="context in contexts" :value="context" v-text="context">{{ contexts }}</option>
+        </datalist>
         för att
-        <input type="text" name="reason" placeholder="orsak" v-model="newReason">
+        <!-- reason -->
+        <input type="text" name="reason" placeholder="orsak" list="reasons" v-model="newReason">
+        <datalist id="reasons" :value="newReason">
+            <option v-for="reason in reasons" :value="reason" v-text="reason">{{ reasons }}</option>
+        </datalist>
+        <!--  -->
         <button v-on:click="addStory">add story</button>
-        <p id="error"></p>
-        <h3 id="full"></h3>
-        <li v-for="fullStory in fullStories" v-text="fullStory"></li>
         <p>Som en {{ newRole }} vill jag {{ newActivity }} i {{ newContext }} för att {{ newReason }}.</p>
-        
+        <p id="error"></p>
+            <!--  -->
+            <h3 id="full"></h3>
+            <li v-for="fullStory in fullStories" v-text="fullStory"></li>
+            <!--  -->
             <h3 id="rol"></h3>
             <li v-for="role in roles" v-text="role">{{ roles }}</li>
-            
+            <!--  -->
             <h3 id="akt"></h3>
             <li v-for="activity in activities" v-text="activity">{{ activities }}</li>
-
+            <!--  -->
             <h3 id="con"></h3>
-            <li v-for="context in context" v-text="context">{{ context }}</li>
-
+            <li v-for="context in contexts" v-text="context">{{ contexts }}</li>
+            <!--  -->
             <h3 id="res"></h3>
             <li v-for="reason in reasons" v-text="reason">{{ reasons }}</li>
         
@@ -51,6 +70,14 @@
         <ul>
             <li v-for="name in names" v-text="name">{{ names }}</li>
         </ul>
+        <div class="stuck" v-for="box in items">
+                <p>Pick an option for this box:</p>
+                <select :value="box.id" @input="handleSelect(box.id, $event)">
+                  <option v-for="package in packages" :value="package.id">
+                    {{ package.name }}
+                  </option>
+                </select>
+              </div>
         
         
     </div>

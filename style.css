@@ -1,3 +1,10 @@
+body{
+    -ms-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
 input[type=text]{
     border: none;
     border-bottom: 2px solid #8842d5;  

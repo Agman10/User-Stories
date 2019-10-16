@@ -10,12 +10,13 @@ var app = new Vue({
         newActivity: '',
         activities: [],
         newContext: '',
-        context: [],
+        contexts: [],
         newReason: '',
         reasons: []
     },
 
     methods: {
+
         addName(){
             this.names.push("hello " + this.newName + this.newReason);
 
@@ -29,6 +30,7 @@ var app = new Vue({
                 document.getElementById("error").innerHTML = "full story added";
                 document.getElementById("full").innerHTML = "Full Story:";
 
+
                 this.fullStories.push(
                 "Som en " + this.newRole + 
                 " vill jag " + this.newActivity + 
@@ -40,15 +42,16 @@ var app = new Vue({
             if (!this.newRole) {
                 console.log("Roll är tom")
             }else if(this.newRole){
-                document.getElementById("rol").innerHTML = "roll:";
+                document.getElementById("rol").innerHTML = "roller:";
                 this.roles.push(this.newRole);
                 this.newRole = '';
+                
             }
             
             if(!this.newActivity){
                 console.log("Aktivitet är tom");
             } else if(this.newActivity){
-                document.getElementById("akt").innerHTML = "aktivitet:";
+                document.getElementById("akt").innerHTML = "aktiviteter:";
                 this.activities.push(this.newActivity);
                 this.newActivity = '';
             }
@@ -57,14 +60,14 @@ var app = new Vue({
                 console.log("Sammanhang är tom");
             } else if(this.newContext){
                 document.getElementById("con").innerHTML = "sammanhang:";
-                this.context.push(this.newContext);
+                this.contexts.push(this.newContext);
                 this.newContext = '';
             }
             
             if(!this.newReason){
                 console.log("Orsak är tom");
             } else if(this.newReason){
-                document.getElementById("res").innerHTML = "orsak:";
+                document.getElementById("res").innerHTML = "orsaker:";
                 this.reasons.push(this.newReason);
                 this.newReason = '';
             }
