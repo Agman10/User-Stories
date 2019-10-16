@@ -16,6 +16,7 @@
         </div> -->
 
     <div id="root">
+        <div id="wrap">
         Som en
         <!-- role -->
         <input type="text" name="role" placeholder="roll" list="roles" v-model="newRole">
@@ -43,8 +44,10 @@
         </datalist>
         <!--  -->
         <button v-on:click="addStory">add story</button>
+        </div>
         <p>Som en {{ newRole }} vill jag {{ newActivity }} i {{ newContext }} för att {{ newReason }}.</p>
         <p id="error"></p>
+        <div id="wrap">
             <!--  -->
             <h3 id="full"></h3>
             <li v-for="fullStory in fullStories" v-text="fullStory"></li>
@@ -60,26 +63,23 @@
             <!--  -->
             <h3 id="res"></h3>
             <li v-for="reason in reasons" v-text="reason">{{ reasons }}</li>
-        
+        </div>
         <p id="text"></p>
 
 
-
-        <input id="input" type="text" v-model="newName">
-        <button v-on:click="addName">Add roll</button>
+        <div id="wrap">
+        <select name="story" v-model="newName">
+        <!-- <datalist> -->
+            <option value="fullStory">story</option>
+            <option value="roles">roller</option>
+        <!-- </datalist> -->
+        </select>
+        <button v-on:click="showStories">Show stories</button>
         <ul>
             <li v-for="name in names" v-text="name">{{ names }}</li>
         </ul>
-        <div class="stuck" v-for="box in items">
-                <p>Pick an option for this box:</p>
-                <select :value="box.id" @input="handleSelect(box.id, $event)">
-                  <option v-for="package in packages" :value="package.id">
-                    {{ package.name }}
-                  </option>
-                </select>
-              </div>
-        
-        
+    </div>
+
     </div>
     <script src="vue.js"></script>
     <script src="main.js"></script>

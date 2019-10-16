@@ -17,8 +17,8 @@ var app = new Vue({
 
     methods: {
 
-        addName(){
-            this.names.push("hello " + this.newName + this.newReason);
+        showStories(){
+            this.names.push(this.roles);
 
             this.newName = '';
         },
