@@ -9,14 +9,8 @@
 
 </head>
 <body>
-        <!-- <div id="root">
-            <input type="text" id="input" v-model="message">
-
-            <p>the value of the input is: {{ message }}</p>
-        </div> -->
-
     <div id="root">
-        <div id="wrap">
+        <div id="input">
         Som en
         <!-- role -->
         <input type="text" name="role" placeholder="roll" list="roles" v-model="newRole">
@@ -45,39 +39,66 @@
         <!--  -->
         <button v-on:click="addStory">add story</button>
         </div>
-        <p>Som en {{ newRole }} vill jag {{ newActivity }} i {{ newContext }} för att {{ newReason }}.</p>
-        <p id="error"></p>
-        <div id="wrap">
-            <!--  -->
-            <h3 id="full"></h3>
-            <li v-for="fullStory in fullStories" v-text="fullStory"></li>
-            <!--  -->
-            <h3 id="rol"></h3>
-            <li v-for="role in roles" v-text="role">{{ roles }}</li>
-            <!--  -->
-            <h3 id="akt"></h3>
-            <li v-for="activity in activities" v-text="activity">{{ activities }}</li>
-            <!--  -->
-            <h3 id="con"></h3>
-            <li v-for="context in contexts" v-text="context">{{ contexts }}</li>
-            <!--  -->
-            <h3 id="res"></h3>
-            <li v-for="reason in reasons" v-text="reason">{{ reasons }}</li>
-        </div>
-        <p id="text"></p>
+        <br>
+        
 
+        
 
-        <div id="wrap">
-        <select name="story" v-model="newName">
+        <!-- show -->
+        <div class="wrap">
+        <select v-model="selected" id="stry" name="stry">
         <!-- <datalist> -->
-            <option value="fullStory">story</option>
-            <option value="roles">roller</option>
+            <option v-for="option in options" v-bind:value="option.value">
+                {{ option.text }}
+            </option>
+            <!-- <option>story</option>
+            <option>roller</option> -->
         <!-- </datalist> -->
         </select>
-        <button v-on:click="showStories">Show stories</button>
-        <ul>
-            <li v-for="name in names" v-text="name">{{ names }}</li>
-        </ul>
+        <!-- <button v-on:click="showStories">test button</button> -->
+        <!-- <p> Selected: {{ selected }}</p> -->
+        <div id="lists">
+        <li v-if="selected === 'fullStories'" v-for="fullStory in fullStories" v-text="fullStory"> 
+            {{ fullStories }} </li>
+        <li v-if="selected === 'roles'" v-for="role in roles" v-text="role"> 
+            {{ roles }} </li>
+        <li v-if="selected === 'activities'" v-for="activity in activities" v-text="activity"> 
+            {{ activies }} </li>
+        <li v-if="selected === 'contexts'" v-for="context in contexts" v-text="context"> 
+            {{ contexts }} </li>
+        <li v-if="selected === 'reasons'" v-for="reason in reasons" v-text="reason"> 
+            {{ reasons }} </li>
+        </div>
+        <!-- <li v-for="fullStory in fullStories" v-text="fullStory"></li> -->
+        <!-- <li v-for="selected in select"> {{ selected }} </li> -->
+        <!-- <ul>
+            <li id="showFull" v-for="fullStory in fullStories">{{ selected }}</li>
+            <li v-repeat="newName" v-text="names">
+                {{ $value }}
+            </li>
+        </ul> -->
+    </div>
+
+    <br>
+    <!-- lists -->
+    <div class="wrap">
+            <p>Som en {{ newRole }} vill jag {{ newActivity }} i {{ newContext }} för att {{ newReason }}.</p>
+            <p id="error"></p>
+        <!--  -->
+        <h3 id="full"></h3>
+        <li v-for="fullStory in fullStories" v-text="fullStory"></li>
+        <!--  -->
+        <h3 id="rol"></h3>
+        <li v-for="role in roles" v-text="role">{{ roles }}</li>
+        <!--  -->
+        <h3 id="akt"></h3>
+        <li v-for="activity in activities" v-text="activity">{{ activities }}</li>
+        <!--  -->
+        <h3 id="con"></h3>
+        <li v-for="context in contexts" v-text="context">{{ contexts }}</li>
+        <!--  -->
+        <h3 id="res"></h3>
+        <li v-for="reason in reasons" v-text="reason">{{ reasons }}</li>
     </div>
 
     </div>

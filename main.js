@@ -1,4 +1,5 @@
-
+/* var stry = document.getElementById("stry");
+var strySelect = stry.options[stry.selectedIndex].text; */
 var app = new Vue({
     el:'#root',
     data: {
@@ -12,17 +13,18 @@ var app = new Vue({
         newContext: '',
         contexts: [],
         newReason: '',
-        reasons: []
+        reasons: [],
+        selected: 'fullStories',
+        options: [
+            { text: 'Full Storys', value: 'fullStories' },
+            { text: 'Roller', value: 'roles' },
+            { text: 'Aktivitet', value: 'activities' },
+            { text: 'Sammanhang', value: 'contexts' },
+            { text: 'Orsaker', value: 'reasons' }
+          ]
     },
 
     methods: {
-
-        showStories(){
-            this.names.push(this.roles);
-
-            this.newName = '';
-        },
-
         addStory(){
             if(!this.newRole && !this.newActivity && !this.newContext && !this.newReason){
                 document.getElementById("error").innerHTML = "fill in everything to get full story";
@@ -73,6 +75,31 @@ var app = new Vue({
             }
             
             
+        },
+
+        showStories(){
+            if(this.selected === 'fullStories'){
+                console.log("cvdfgsadfgsad")
+            }
+            /* if(this.selected == 'fullStories'){
+                console.log("Story: " + this.selected)
+                 this.fullStories.push(
+                    "Som en " + this.newRole + 
+                    " vill jag " + this.newActivity + 
+                    " i " + this.newContext + 
+                    " för att " + this.newReason + "."); 
+            } else if(this.selected == 'roles'){
+                console.log("Roller: " + this.selected)
+            } */
+
+            /* if (strySelect = "story"){
+                console.log("fulllll")
+                console.log(strySelect)
+                
+            }else if(strySelect = "roller"){
+                console.log("errorrr")
+            } */
+        
         }
     },
 })
