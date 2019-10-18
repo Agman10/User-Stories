@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Passion+One&display=swap" rel="stylesheet">
+    <title>Society Stories</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Luckiest+Guy|Passion+One|Fira+Sans|Quantico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+    <!-- <div id="back"> -->
     <div id="root">
-        <div id="logo">User Stories</div>
+        <div id="logo" v-on:click="changeColor">Society Stories</div>
         <div id="input">
         Som en
         <!-- role -->
@@ -39,7 +40,7 @@
             <option v-for="reason in reasons" :value="reason" v-text="reason">{{ reasons }}</option>
         </datalist>
         <!--  -->
-        <button v-on:click="addStory">add story</button>
+        <button id="button" v-on:click="addStory">Add Story</button>
         </div>
         <br>
         
@@ -104,6 +105,7 @@
     </div>
 
     </div>
+<!-- </div> -->
     <script src="vue.js"></script>
     <script src="main.js"></script>
 </body>

@@ -1,5 +1,20 @@
 /* var stry = document.getElementById("stry");
 var strySelect = stry.options[stry.selectedIndex].text; */
+var logo = document.getElementById("logo");
+var clicked = false;
+console.log(clicked)
+/* if (!clicked){
+    logo.style.color = "red";
+    console.log("false: " + clicked)
+} else if (clicked = true) {
+    logo.style.color = "blue";
+    console.log("true: " + clicked)
+} */
+/* logo.addEventListener("click", function(){
+    clicked = !clicked;
+    logo.style.color = clicked ? "red" : "blue";
+    console.log("color")
+}); */
 var app = new Vue({
     el:'#root',
     data: {
@@ -100,6 +115,27 @@ var app = new Vue({
                 console.log("errorrr")
             } */
         
+        },
+        
+        changeColor(){
+            /* console.log("color")
+            console.log(clicked)*/
+            /* logo.style.color = "#83af89"; */
+            clicked = !clicked;
+            console.log(clicked)
+            logo.style.color = clicked ? "green" : "purple";
+            console.log(logo.style.color)
+            
+            /* logo.style.color = clicked ? "red" : "blue"; */
+            /* if(clicked = true){
+                clicked = true;
+                logo.style.color = "red";
+                console.log("true " + clicked)
+            } else if (clicked = false){
+                clicked = false;
+                logo.style.color = "blue";
+                console.log("false " + clicked)
+            } */
         }
     },
 })
