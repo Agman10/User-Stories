@@ -127,8 +127,8 @@ input[type=text]:focus {
     outline: none;
   }
 
-#rol, #akt, #con, #res{
+/* #rol, #akt, #con, #res{ */
     /* color:red; */
     /* position: relative;
     left: -20px; */
-}
+/* } */
