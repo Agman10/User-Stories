@@ -16,7 +16,7 @@
         <div id="input">
         Som en
         <!-- role -->
-        <input type="text" name="role" placeholder="roll" list="roles" v-model="newRole">
+        <input type="text" name="role" placeholder="roll" list="roles" v-model="newRole" autofocus>
         <!-- adds new role to the list in input -->
         <datalist id="roles" :value="newRole">
             <option v-for="role in roles" :value="role" v-text="role">{{ roles }}</option>
