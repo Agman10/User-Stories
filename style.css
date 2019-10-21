@@ -56,8 +56,8 @@ body{
     font-family: 'Quantico', sans-serif;
 }
 #button:focus{
-    background-color: rgb(111, 155, 117);
-    border-color: rgb(87, 131, 82);
+    background-color: rgb(91, 135, 97);
+    border-color: rgb(67, 111, 62);
     color: rgb(0, 2, 0);
     outline: none;
 

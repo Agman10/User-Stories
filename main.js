@@ -1,8 +1,14 @@
 /* var stry = document.getElementById("stry");
 var strySelect = stry.options[stry.selectedIndex].text; */
-var logo = document.getElementById("logo");
+
+
+/* COLOR CHANGER */
+/* var logo = document.getElementById("logo");
 var clicked = false;
-console.log(clicked)
+console.log(clicked) */
+
+
+
 /* if (!clicked){
     logo.style.color = "red";
     console.log("false: " + clicked)
@@ -94,7 +100,7 @@ var app = new Vue({
 
         showStories(){
             if(this.selected === 'fullStories'){
-                console.log("cvdfgsadfgsad")
+                /* console.log("cvdfgsadfgsad") */
             }
             /* if(this.selected == 'fullStories'){
                 console.log("Story: " + this.selected)
@@ -121,10 +127,15 @@ var app = new Vue({
             /* console.log("color")
             console.log(clicked)*/
             /* logo.style.color = "#83af89"; */
-            clicked = !clicked;
-            console.log(clicked)
+
+
+            /* COLOR CHANGER */
+            /* clicked = !clicked;
+            console.log(clicked) 
             logo.style.color = clicked ? "green" : "purple";
-            console.log(logo.style.color)
+            console.log(logo.style.color) */
+
+
             
             /* logo.style.color = clicked ? "red" : "blue"; */
             /* if(clicked = true){
